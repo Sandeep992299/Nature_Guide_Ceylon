@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="A Documentary website about Sri Lankan Wildlife.">
+    <meta name="keywords" content="Sri Lanka, Wildlife, Nature Guide  Ceylon,Sri Lankan leopard">
+    <meta name="author" content="Sandeep Dissanayake">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#90EE90">
+    <title>Nature Guide Ceylon - Dashboard</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/x-icon" href="Nature_guide_ceylon_logo copy1.png">
+    <link rel="reset" href="reset.css">
+    <link rel="stylesheet" href="test3.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: "poppins", sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #caf9c3, #91a9ff);
+        }
+        .sidebar {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: linear-gradient(135deg, #40da28, #070707);
+            padding-top: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .sidebar h1 {
+            color: #fff;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .sidebar ul li {
+            padding: 10px;
+            color: #fff;
+            cursor: pointer;
+        }
+        .sidebar ul li a{
+            color: #fff;
+            cursor: pointer;
+            text-decoration: none;
+        }
+    
+        .sub-menu {
+            display: none;
+            background-color: #45835f;
+            margin-left: 20px;
+        }
+        .sub-menu ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .sub-menu ul li {
+            padding: 10px;
+            color: #ddd;
+            cursor: pointer;
+        }
+        .sub-menu ul li :hover {
+            background-color: #444;
+        }
+
+        .sub-menu ul a{
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            text-decoration: none;
+        }
+        .sub-menu ul li a{
+            padding: 10px;
+            color: #ddd;
+            cursor: pointer;
+        }
+        .sub-menu ul li a:hover {
+            background-color: #444;
+        }
+        .active {
+            display: block !important;
+        }
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+        .centered {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 30px;
+        }
+        .social-icons a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+        @media screen and (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                top: auto;
+                left: auto;
+            }
+            .sidebar h1 {
+                font-size: 20px;
+                margin-bottom: 10px;
+            }
+            .sidebar ul li {
+                padding: 8px;
+                font-size: 14px;
+            }
+            .sub-menu ul li {
+                padding: 8px;
+                font-size: 14px;
+            }
+            .content {
+                padding: 10px;
+            }
+            .social-icons {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="sidebar">
+    <h1>Dashboard</h1>
+    <ul>
+        <li><a href="home.html">Home</a></li>
+        <li>National Parks</li>
+        <div class="sub-menu">
+            <ul>
+                <li><a href="7yala.html">Yala National Park</a></li>
+                <li><a href="8Wilpaththu.html">Wilpattu National Park</a></li>
+            </ul>
+        </div>
+        <li>Animals</li>
+        <div class="sub-menu">
+            <ul>
+                <li><a href="5sri_lankan_elephant.html">Sri Lankan Elephant</a></li>
+                <li><a href="4sri_lankan_leopard.html">Sri Lankan Leopard</a></li>
+                <li><a href="6indeginous-animals.html">Indeginous Animals</a></li>
+            </ul>
+        </div>
+        <li>Menu</li>
+        <div class="sub-menu">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="2sri_lankan_wildlife_intro.html">Introduction</a></li>
+                <li><a href="3DOWC.html">Department of Wildlife Conservation</a></li>
+                <li><a href="7yala.html">Yala National Park</a></li>
+                <li><a href="8Wilpaththu.html">Wilpattu National Park</a></li>
+                <li><a href="5sri_lankan_elephant.html">Sri Lankan Elephant</a></li>
+                <li><a href="4sri_lankan_leopard.html">Sri Lankan Leopard</a></li>
+                <li><a href="6indeginous-animals.html">Indeginous Animals</a></li>
+            </ul>
+        </div>
+        <li>Packages</li>
+        <li>Contact Us</li>
+        <li>About Us</li>
+    </ul>
+    <div class="social-icons">
+        <a href="www.facebook.com"><i class="fab fa-facebook"></i></a>
+        <a href="www.twitter.com"><i class="fab fa-twitter"></i></a>
+        <a href="www.youtube.com"><i class="fab fa-youtube"></i></a>
+        <a href="www.instagram.com"><i class="fab fa-instagram"></i></a>
+    </div>
+</div>
+
+<div class="content centered">
+    <img src="icon512_rounded.png" alt="Nature Guide Ceylon" style="margin-bottom: 20px; width: 200px;">
+    <h1>Welcome to Nature Guide Ceylon</h1>
+    <p>Keep Calm and Love the Nature.</p>
+</div>
+
+<script>
+    const mainTopics = document.querySelectorAll('.sidebar ul li');
+    mainTopics.forEach(topic => {
+        topic.addEventListener('click', () => {
+            const subMenu = topic.nextElementSibling;
+            const isActive = subMenu.classList.contains('active');
+
+            // Hide all submenus
+            document.querySelectorAll('.sub-menu').forEach(menu => {
+                menu.classList.remove('active');
+            });
+
+            // If clicked submenu is not active, make it active
+            if (!isActive) {
+                subMenu.classList.add('active');
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="A Documentary website about Sri Lankan Wildlife.">
+    <meta name="keywords" content="Sri Lanka, Wildlife, Nature Guide  Ceylon,Sri Lankan leopard">
+    <meta name="author" content="Sandeep Dissanayake">
+    <meta name="theme-color" content="#90EE90">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NGC - Department of Wildlife Conservation</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/x-icon" href="Nature_guide_ceylon_logo copy1.png">
+    <link rel="reset" href="reset.css">
+    <link rel="stylesheet" href="test3.css">
+    <link rel="stylesheet" href="dow.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="//unpkg.com/alpinejs" defer></script>
+</head>
+
+<!-- Popup Message when document saved. -->
+<div id="popup">
+    <h2>Changes Saved!</h2>
+</div>
+
+<body x-data="DOWC">
+    <header class="header-main">
+        <div class="banner-area">
+            <img src="dow logo.png" alt="banner">
+            <img src="sigiriya.jpg" alt="banner">
+        </div>
+        <a href="Nature_guide_ceylon_logo copy1.png" class="logo"></a>
+
+        <input type="checkbox" id="menu-bar">
+        <label for="menu-bar">Menu</label>
+
+        <nav class="navbar">
+            <section class="logo-area">
+                <img src="Nature_guide_ceylon_logo copy1.png" alt="logo">
+                <button id="loginButton">Login</button>
+            </section>     
+            <ul>
+                <li><a class="p" href="home.html">Home</a></li>
+                <li><a class="p" href="#">National Parks </a>
+                    <ul class="drop">
+                        <li><a target="_blank" href="7yala.html">Yala National Park</a></li>
+                        <li><a target="_blank" href="8Wilpaththu.html">Wilpaththu National Park</a></li>   
+                    </ul>
+                </li>
+                <li><a class="p" href="#">Animals </a>
+                    <ul class="drop">
+                        <li><a target="_blank" href="4sri_lankan_leopard.html">Sri Lanakan Leopard</a></li>
+                        <li><a target="_blank" href="5sri_lankan_elephant.html">Sri Lankan Elephant</a></li> 
+                        <li><a target="_blank" href="6indeginous-animals.html">Indeginous Animals</a></li>  
+                    </ul>
+                </li>
+                <li><a href="9about_us.html">About Us</a></li>
+                <li><a href="10contact_us.html">Contact Us</a></li>
+                <li><a href="#">Menu</a>
+                    <ul class="drop">
+                        <a class="p" target="_blank" href="home.html">Home</a>
+                        <a class="p" target="_blank" href="2sri_lankan_wildlife_intro.html">Introduction</a>
+                        <a class="p" target="_blank" href="3DOWC.html">Departmrnt of Wildlife Conservation</a>
+                        <a class="p" target="_blank" href="4sri_lankan_leopard.html">Sri Lankan Leopard</a>
+                        <a class="p" target="_blank" href="5sri_lankan_elephant.html">Sri Lankan Elephant</a>
+                        <a class="p" target="_blank" href="6indeginous-animals.html">Indeginous Animals</a>
+                        <a class="p" target="_blank" href="7yala.html">Yala National Park</a>
+                        <a class="p" target="_blank" href="8Wilpaththu.html">Wilpaththu National Park</a>
+                        <a class="p" target="_blank" href="10contact_us.html">Contact Us</a>
+                        <a class="p" target="_blank" href="9about_us.html">About Us</a>
+                    </ul>
+                </li>
+            </ul>
+        </nav> 
+    </header>
+    
+    <div class="content-area">
+        <p>Department Of Wildlife Conservation</p>
+
+         <!--Editing the document is staring here --> 
+
+         <button id="editBtn" type="button">Edit Document</button>
+        <div id="editor">
+             <c id="lastEdited">Last Edited By: <span id="author">Sandeep Dissanayake</span> at <span id="editTime">-</span></c>
+
+        <section class="flex-container">
+            <article class="flex-box">
+              <p x-text="intro1" id="intro1"></p>
+            </article>
+            <article class="flex-box">
+              <img rel="image" src="dow logo.png" alt="Department of Wildlife Conservation logo">
+            </article>
+        </section>
+        <h2>Protected Areas</h2>
+        <p class="protect" x-text="protect_demo" id="protect_demo">
+            
+        </p>
+        <section class="protected">
+            <img src="forest_details1.jpg" alt="Sri Lankan Forest Details">
+        </section>
+        <section class="image_grid">
+            <img class="image_grid-col"  src="IMG-20231202-WA0026.jpg" alt="Forest image">
+            <img src="f2.jpg" alt="Forest image">
+            <img src="f3.jpg" alt="Forest image">
+            <img src="f4.jpg" alt="Forest image">
+            <img src="f5.jpg" alt="Forest image">
+            <img src="f1.jpg" alt="Forest image">
+        </section>
+        <h2>Location</h2>
+        <section class="flex-container">
+            <article class="flex-box">
+                <img rel="image" src="dow_building.jpg" alt="Department of Wildlife building"> 
+            </article>
+            <article class="flex-box">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d481915.042548503!2d79.5572321600685!3d6.897115664880322!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae250aa85489b1f%3A0xd8773339b6b43dbb!2sDepartment%20of%20Wildlife%20Conservation!5e1!3m2!1sen!2slk!4v1703677128073!5m2!1sen!2slk" 
+                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </article>
+        </section>
+
+        <div class="news">
+            <form action="">
+                <h1>Join Our Newsletter</h1>
+                <p>Journey into the Heart of Nature: Stories, Insights, and Adventures Await in Our Wildlife Newsletter.</p>
+            </form>
+            <div class="email">
+                    <i class="fa fa-envelope"></i>
+                    <input class="tbox" type="email" id="emailInput" placeholder="example@gmail.com" required>
+                    <button class="btn" onclick="openPopup()">Subscribe</button>
+            </div>
+            
+        </div>
+        
+        <!-- Overlay -->
+        <div class="overlay" id="overlay" onclick="closePopup()"></div>
+        
+        <!-- Popup container -->
+        <div class="popup-container" id="popupContainer">
+            <div class="popup-content">
+                <img src="tick.png" alt="tick">
+                <span class="close-btn" onclick="closePopup()">X</span>
+                <h2>Successful!</h2><br>
+                <p>You have successfully subscribed to our Newsletter.<br><br> Thank you!</p><br><br>
+                <a href="packages.html">Ok</a>
+            </div> 
+        </div>
+        </div>
+        
+        <script>
+        function openPopup() {
+            // Get the email input value
+            var emailInput = document.getElementById("emailInput").value;
+        
+            // Validate email format
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(emailInput)) {
+                alert("Please input a Correct email.")
+                return; // Stop further execution if email is invalid
+            }
+        
+            // Show overlay and popup
+            document.getElementById("overlay").style.display = "block";
+            document.getElementById("popupContainer").style.display = "block";
+        
+        }
+        
+        function closePopup() {
+            // Hide overlay and popup
+            document.getElementById("overlay").style.display = "none";
+            document.getElementById("popupContainer").style.display = "none";
+        }
+        </script>
+
+        
+        <footer class="footer">
+            <section class="container">
+                <section class="row">
+                    <section class="footer-col">
+                        <h3>Contact Us</h3>
+                        <ul>
+                            <h4>Email - dissanayakesandeep@gmail.com</h4>
+                            <h4>Phone - +94714568342</h4>
+                            <h4>Address - No.142,Rajawella 2<br>Digana</h4>
+                        </ul>
+                    </section>
+                    <section class="footer-col">
+                        <h3>Menu</h3>
+                        <ul>
+                            <li><a href="home.html">Home</a></li>
+                            <li><a href="home.html">Menu</a></li>
+                            <li><a href="10contact_us.html">Contact Us</a></li>
+                            <li><a href="9about_us.html">About Us</a></li> 
+                        </ul>
+                    </section>
+                    <section class="footer-col">
+                        <h3>Follow Us</h3>
+                        <section class="social-links">
+                            <a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
+                            <a href="https://twitter.com/?lang=en"><i class="fa fa-twitter"></i></a>
+                            <a href="https://www.instagram.com/"><i class="fa fa-instagram"></i></a>
+                            <a href="https://www.youtube.com/"><i class="fa fa-youtube"></i></a>
+                            <a href="https://lk.linkedin.com/"><i class="fa fa-linkedin"></i></a>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="copyright">
+                <h3>Copyright &COPY;2023 All Rights Reseved. Nature Guide Ceylon</h3>
+            </section>
+             <!--
+                ***Copyright owners of the images***
+                   Mr.Ruwan Nishantha - Wildlife Photographer
+                   Pixabey Website
+                   Sri Lankan Government
+                   Department of Wildlife Conservation - Logo
+                   Sri Lankan Airlines
+                   Sri Lankan Tourism Board
+                   Sri Lankan Rupawahini Coparation
+                   Booking.com
+                   TripAdvisar
+            -->
+        </footer>
+    </div>
+    
+
+    <!--Script-->
+    <script>
+        const DOWC = {
+               intro1: '',
+               protect_demo: '',
+               
+
+        };
+
+    // Fetch the JSON data
+    fetch('DOWC_3.json')
+        .then(response => response.json())
+        .then(data => {
+             DOWC.intro1 = data.intro1;
+             DOWC.protect_demo = data.protect_demo;
+             
+             
+        })
+        .catch(error => console.error('Error fetching data:', error));
+
+    </script>
+
+    <!-- Edit and save button java script -->
+
+
+    <script>
+        const editBtn = document.getElementById('editBtn');
+        const editables = document.querySelectorAll('#title, #author, #intro1, #protect_demo, #');
+        const popup = document.getElementById('popup');
+
+        editBtn.addEventListener('click', function(e) {
+            if (!editables[0].isContentEditable) {
+                // Enable Editing
+                editables.forEach(element => {
+                    element.contentEditable = 'true';
+                });
+                editBtn.innerHTML = 'Save Changes';
+                editBtn.style.backgroundColor = '#6F9';
+            } else {
+                // Disable Editing 
+                editables.forEach(element => {
+                    element.contentEditable = 'false';
+                });
+                // Change Button Text and Color 
+                editBtn.innerHTML = 'Enable Editing';
+                editBtn.style.backgroundColor = '#F96';
+                
+                // Clear existing localStorage data for the specific elements
+                editables.forEach(element => {
+                    localStorage.removeItem(element.getAttribute('id'));
+                });
+
+                // Save the edited content in localStorage 
+                editables.forEach(element => {
+                    localStorage.setItem(element.getAttribute('id'), element.innerHTML);
+                });
+
+                // Display username and edit time
+                const username = localStorage.getItem('username'); // Replace with actual username
+                const editTime = new Date().toLocaleString(); // Get current date and time
+                document.getElementById('author').textContent = username;
+                document.getElementById('editTime').textContent = editTime;
+
+                // Show Popup Message
+                popup.style.display = 'block';
+                // Hide Popup after 2 seconds
+                setTimeout(() => {
+                    popup.style.display = 'none';
+                }, 2000);
+            }
+        });
+
+        // Load content from localStorage on page load
+        window.addEventListener('DOMContentLoaded', function() {
+            editables.forEach(element => {
+                const storedContent = localStorage.getItem(element.getAttribute('id'));
+                if (storedContent) {
+                    element.innerHTML = storedContent;
+                }
+            });
+        });
+    </script>
+
+     <!-- login/logout toggle button script-->
+
+     <script src="loginbtn.js"></script>
+</body>
+</html>

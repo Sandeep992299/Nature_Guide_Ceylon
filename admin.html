@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="A Documentary website about Sri Lankan Wildlife.">
+    <meta name="keywords" content="Sri Lanka, Wildlife, Nature Guide Ceylon, Sri Lankan leopard">
+    <meta name="author" content="Sandeep Dissanayake">
+    <meta name="theme-color" content="#90EE90">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NGC- Admin's library</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/x-icon" href="Nature_guide_ceylon_logo copy1.png">
+    <link rel="reset" href="reset.css">
+    <link rel="stylesheet" href="test3.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="//unpkg.com/alpinejs" defer></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: url('binary.gif');
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            background: linear-gradient(lightblue, rgb(187, 189, 137));
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        h1 {
+            text-align: center;
+            font-family: poppins, sans-serif;
+            font-weight: bold;
+            margin: 20px;
+            color: #ffffff;
+            display: none;
+        }
+        th {
+            background: linear-gradient(rgb(200, 187, 187), rgb(132, 132, 163));
+        }
+
+        /* Responsive Styles */
+        @media only screen and (max-width: 768px) {
+            /* Adjustments for smaller screens */
+            body {
+                margin: 10px;
+            }
+            h1 {
+                font-size: 1.5em;
+            }
+        }
+
+        .login-form {
+            text-align: center;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .login-form input {
+            margin-bottom: 10px;
+            padding: 8px;
+        }
+
+        .login-form button {
+            padding: 8px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Hide tables initially */
+        table {
+            display: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-form">
+        <h2>Login</h2>
+        <input type="text" id="username" placeholder="Username">
+        <br>
+        <input type="password" id="password" placeholder="Password">
+        <br>
+        <button onclick="login()">Login</button>
+    </div>
+
+    <h1 id="billingHeading">Billing Details</h1>
+    <table id="billingTable">
+        <thead>
+            <tr>
+                <th>Package</th>
+                <th>Card Type</th>
+                <th>Card Number</th>
+                <th>Expiry Date</th>
+                <th>CVV</th>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Address</th>
+            </tr>
+        </thead>
+        <tbody id="billingDetailsBody">
+            <!-- Table rows will be dynamically added here -->
+        </tbody>
+    </table>
+
+    <h1 id="hackerHeading">Hacker Details</h1>
+    <table id="hackersTable">
+        <thead>
+            <tr>
+                <th>IP Address</th>
+                <th>Login Date</th>
+                <th>Login Time</th>
+                <th>Username</th>
+                <th>Password</th>
+            </tr>
+        </thead>
+        <tbody id="hackersBody">
+            <!-- Hacker records will be dynamically added here -->
+        </tbody>
+    </table>
+
+    <script>
+        function login() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            
+            if (username === "admin" && password === "admin") {
+                // Show tables and hide login form
+                document.getElementById("billingTable").style.display = "table";
+                document.getElementById("hackersTable").style.display = "table";
+                document.getElementById("billingHeading").style.display = "block"; // Display billing details heading after login
+                document.getElementById("hackerHeading").style.display = "block"; // Display hacker details heading after login
+                document.querySelector(".login-form").style.display = "none";
+            } else {
+                alert("Hacker detected!!!");
+                // Get hacker's information
+                var hackerInfo = {
+                    ipAddress: getIpAddress(),
+                    loginDate: getCurrentDate(),
+                    loginTime: getCurrentTime(),
+                    username: username,
+                    password: password
+                };
+                // Store hacker's information in local storage
+                var hackers = JSON.parse(localStorage.getItem('hackers')) || [];
+                hackers.push(hackerInfo);
+                localStorage.setItem('hackers', JSON.stringify(hackers));
+                // Send email to admin
+                sendEmailToAdmin(hackerInfo.ipAddress);
+            }
+        }
+
+        function getIpAddress() {
+            // This is a placeholder function, you need to implement the logic to get the user's IP address
+            // For security reasons, getting the user's IP address from client-side JavaScript is not reliable
+            // You may need to do this on the server-side
+            return "123.456.789.123"; // Placeholder IP address
+        }
+
+        function getCurrentDate() {
+            var now = new Date();
+            return now.toDateString();
+        }
+
+        function getCurrentTime() {
+            var now = new Date();
+            return now.toLocaleTimeString();
+        }
+
+        function sendEmailToAdmin(ipAddress) {
+            // This is a simulated function to send email to admin
+            // In a real-world scenario, you would need a server-side script to handle email sending
+            // Replace this with your actual email sending logic
+            var adminEmail = "disanayakesandeep@gmail.com"; // Admin's email address
+            var subject = "Unauthorized Access Detected";
+            var greeting = "Dear Admin,";
+            var body = "An unauthorized person with the IP address " + ipAddress + " is trying to access the system. Please take necessary actions to secure the system.";
+            var closing = "Best regards,\nSecurity Team";
+            var emailContent = "mailto:" + adminEmail + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(greeting + "\n\n" + body + "\n\n" + closing);
+            window.open(emailContent);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Retrieve billing details from local storage
+            const billingDetails = JSON.parse(localStorage.getItem('billingDetails'));
+
+            if (billingDetails && billingDetails.length > 0) {
+                const tableBody = document.getElementById('billingDetailsBody');
+
+                billingDetails.forEach(function(detail) {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${detail.package}</td>
+                        <td>${detail.cardType}</td>
+                        <td>${detail.cardNumber}</td>
+                        <td>${detail.expiryDate}</td>
+                        <td>${detail.cvv}</td>
+                        <td>${detail.fullname}</td>
+                        <td>${detail.email}</td>
+                        <td>${detail.phone}</td>
+                        <td>${detail.address}</td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+            } else {
+                // No billing details found
+                const table = document.getElementById('billingTable');
+                const messageRow = table.insertRow();
+                const messageCell = messageRow.insertCell();
+                messageCell.textContent = 'No billing details found.';
+                messageCell.colSpan = 9;
+                messageCell.style.textAlign = 'center';
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Retrieve hacker records from local storage
+            const hackers = JSON.parse(localStorage.getItem('hackers'));
+
+            if (hackers && hackers.length > 0) {
+                const tableBody = document.getElementById('hackersBody');
+
+                hackers.forEach(function(hacker) {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${hacker.ipAddress}</td>
+                        <td>${hacker.loginDate}</td>
+                        <td>${hacker.loginTime}</td>
+                        <td>${hacker.username}</td>
+                        <td>${hacker.password}</td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+            } else {
+                // No hacker records found
+                const table = document.getElementById('hackersTable');
+                const messageRow = table.insertRow();
+                const messageCell = messageRow.insertCell();
+                messageCell.textContent = 'No hacker records found.';
+                messageCell.colSpan = 5;
+                messageCell.style.textAlign = 'center';
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+
+

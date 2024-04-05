@@ -1,0 +1,46 @@
+.slide img{
+    height: 150px;
+    width: 230px;
+    cursor: pointer;
+}
+.co_partners{
+    height: 150px;
+    margin: 20px;
+    overflow: hidden;
+    position: relative;
+    width: auto;
+    margin-bottom: 100px;
+    background-color: white;
+    margin-top: 100px;
+}
+.slider{
+    animation: scroll 40s linear infinite;
+    display: flex;
+    width: calc(250px *14);
+}
+.slide{
+    height: 150px;
+    width: 250px;
+}
+@keyframes scroll{
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(calc(-250px *7));
+    }
+}
+body{
+    font-family: 'Long Cang', cursive;
+}
+p{
+    font-style: italic;
+    font-family: Arial, Helvetica, sans-serif;
+}
+h2{
+    background-color: chartreuse;
+    text-align: center;
+    font-weight: bold;
+    font-style: italic;
+    margin-bottom: 20px;
+}

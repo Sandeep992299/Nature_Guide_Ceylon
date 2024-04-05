@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="A Documentary website about Sri Lankan Wildlife.">
+    <meta name="keywords" content="Sri Lanka, Wildlife, Nature Guide  Ceylon,Sri Lankan leopard">
+    <meta name="author" content="Sandeep Dissanayake">
+    <meta name="theme-color" content="#90EE90">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="checkout.css">
+    <link rel="icon" type="image/x-icon" href="Nature_guide_ceylon_logo copy1.png">
+    <link rel="reset" href="reset.css">
+    <link rel="stylesheet" href="test3.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="//unpkg.com/alpinejs" defer></script>
+</head>
+<body>
+    <h1>Checkout</h1>
+    <form id="checkoutForm">
+        <fieldset>
+            
+            <legend>Choose a Package:</legend>
+            <div class="package-option">
+                <input type="radio" id="freePackage" name="package" value="free" required>
+                <label for="freePackage">Free Package - <b>FREE</b></label>
+            </div>
+            <div class="package-option">
+                <input type="radio" id="wildBeastPackage" name="package" value="wildbeast" required>
+                <label for="wildBeastPackage">Wild Beast Package - <b>Rs.999.99</b></label>
+            </div>
+            <div class="package-option">
+                <input type="radio" id="wildzillaPackage" name="package" value="wildzilla" required>
+                <label for="wildzillaPackage">Wildzilla Package - <b>Rs.2999.99</b></label>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Payment Information:</legend>
+            <label for="cardType">Credit Card Type:</label>
+            <select id="cardType" name="cardType" required>
+                <option value="">Select Card Type</option>
+                <option value="visa">Visa</option>
+                <option value="mastercard">Mastercard</option>
+                <option value="amex">American Express</option>
+                <option value="discover">Discover</option>
+            </select><br><br>
+            <label for="cardNumber">Credit Card Number:</label>
+            <input type="text" id="cardNumber" name="cardNumber" required><br><br>
+            <label for="expiryDate">Expiry Date:</label>
+            <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY" required><br><br>
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" name="cvv" required><br><br>
+        </fieldset>
+        <fieldset>
+            <legend>Contact Information:</legend>
+            <label for="fullname">Full Name:</label>
+            <input type="text" id="fullname" name="fullname" required><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required><br><br>
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" required></textarea><br><br>
+        </fieldset>
+        <button type="submit">Complete Purchase</button>
+    </form>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Handle form submission
+            document.getElementById('checkoutForm').addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent default form submission
+
+                // Get selected package and amount
+                const package = document.querySelector('input[name="package"]:checked').value;
+
+                // Collect form data
+                const formData = {
+                    package: package,
+                    cardType: document.getElementById('cardType').value,
+                    cardNumber: document.getElementById('cardNumber').value,
+                    expiryDate: document.getElementById('expiryDate').value,
+                    cvv: document.getElementById('cvv').value,
+                    fullname: document.getElementById('fullname').value,
+                    email: document.getElementById('email').value,
+                    phone: document.getElementById('phone').value,
+                    address: document.getElementById('address').value
+                };
+
+                // Get existing billing details from localStorage or initialize an empty array
+                const billingDetails = JSON.parse(localStorage.getItem('billingDetails')) || [];
+
+                // Add new order to the array
+                billingDetails.push(formData);
+
+                // Store updated billing details in localStorage
+                localStorage.setItem('billingDetails', JSON.stringify(billingDetails));
+
+                // Redirect to thank you page
+                window.location.href = 'home.html';
+            });
+        });
+    </script>
+</body>
+</html>
+
+

@@ -1,0 +1,52 @@
+.content-area .flex-container .flex-box p{
+    background-color: aliceblue;
+    text-align: left;
+    font-weight: 400;
+}
+h2{
+    background-color: chartreuse;
+    text-align: center;
+    font-weight: bold;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+.content-area .protect{
+    text-align: left;
+    background-color: aliceblue;
+    font-size: 15px;
+    font-weight: 300;
+    height: fit-content;
+    width: 100%;
+    padding: 20px;
+}
+.protected img{
+    width: 60%;
+    height: 50%;
+    background-color: aliceblue;
+    margin-left: 20%;
+    margin-right: 20%;
+    
+}
+.image_grid{
+    --gap: 16px;
+    --num-cols: 3;
+    --row-height: 300px
+
+    box-sizing: border-box;
+    padding: var(--gap);
+
+    display: grid;
+    grid-template-columns: repeat(var(--num-cols), 1fr);
+    grid-auto-rows: var(--row-height);
+    gap: var(--gap);
+
+}
+.image_grid img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.image_grid-col{
+    grid-column: span 2;
+    grid-row: span 2;
+}
