@@ -1,0 +1,97 @@
+h2{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    background-color: chartreuse;
+}
+.banner-area{
+    object-fit: cover;
+    width: 100%;
+    height: fit-content;
+    margin-top: 10px;
+    opacity: 95%;
+    transition: .3s linear;
+    overflow: hidden;
+}   
+.banner-area:hover{
+    transform: scale(1.1);
+    opacity: 110%;
+    object-fit: cover;
+    width: 100%;
+    height: 80%;
+    margin-top: 10px;
+    overflow-y: hidden;
+    filter: grayscale(0) brightness(1.25);
+
+}
+.containerr{
+    display: flex;
+    height: fit-content;
+    margin-bottom: 20px;
+}
+@media(max-width:1180px){
+    .containerr{
+        width: 100%;
+        flex-direction: column;
+        
+    }
+}
+.parks{
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: 825px;
+    margin-top: 20px;
+    justify-content:space-between ;
+    border: 1px solid black;
+    margin-bottom: 30px;
+}
+.parks .line{
+    font-size: 15px;
+    font-weight: 300;
+    background-color: aliceblue;
+    text-align: left;
+    height: fit-content;
+    margin: 10px ;
+    padding: 10px;
+}
+.fimg{
+    height: 250px;
+    margin-bottom: 15px;
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    
+}
+.fimg img{
+    width: 100%;
+    height: 250px;
+}
+
+.parks h3{
+    font-weight: bold;
+    text-align: center;
+    font-style: italic;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    margin-top: 95px;
+}
+.table td,.table th{
+    
+    border: 2px solid black;
+    text-align: center;
+
+}
+.table th{
+    background-color: rgb(105, 238, 105);
+    height: 30px;
+}
+.table tbody tr:nth-child(even){
+    background-color: antiquewhite;
+}
+
+

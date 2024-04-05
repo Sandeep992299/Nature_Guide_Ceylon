@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="A Documentary website about Sri Lankan Wildlife.">
+    <meta name="keywords" content="Sri Lanka, Wildlife, Nature Guide  Ceylon,Sri Lankan leopard">
+    <meta name="author" content="Sandeep Dissanayake">
+    <meta name="theme-color" content="#90EE90">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NGC - Login Page</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/x-icon" href="Nature_guide_ceylon_logo copy1.png">
+    <link rel="reset" href="reset.css">
+    <link rel="stylesheet" href="login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="//unpkg.com/alpinejs" defer></script>
+</head>
+<body>
+    <div class="wrapper">
+        <form id="loginForm" onsubmit="validateLogin(event)">
+            <h1>Login</h1>
+            <div class="input-box">
+                <input id="username" type="text" placeholder="Username" required>
+                <i class="fa fa-user"></i>
+            </div>
+            <div class="input-box">
+                <input id="password" type="password" placeholder="Password" required>
+                <i class="fa fa-lock"></i>
+            </div>
+
+            <div class="remember-forgot">
+                <label>
+                    <input type="checkbox">Remember me
+                </label>
+                <a href="#">Forgot Password?</a>
+            </div>
+
+            <button type="submit" class="btn">Login</button>
+
+            <div class="register-link">
+                <p>Don't have an account?<a href="register.html" >Register</a></p>
+            </div>
+            <div class="social_icons">
+                <i class="fa fa-facebook"></i>
+                <i class="fa fa-linkedin"></i>
+                <i class="fa fa-instagram"></i>
+                <i class="fa fa-google"></i>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function validateLogin(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Get the username and password entered by the user
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            // Retrieve user data from local storage
+            var userData = JSON.parse(localStorage.getItem('userData'));
+
+            // Check if user data exists
+            if (!userData) {
+                alert('User not registered. Please register first.');
+                return;
+            }
+
+            // Check if username and password are correct
+            if (username === userData.username && password === userData.password) {
+                // If username and password are correct, store them in local storage
+                localStorage.setItem('username', username);
+                localStorage.setItem('isLoggedIn', true);
+
+                // Redirect user to home.html
+                window.location.href = 'dashboard.html';
+            } else {
+                // If username and/or password are incorrect, display an error message
+                alert('Invalid username or password. Please try again.');
+            }
+        }
+    </script>
+</body>
+</html>

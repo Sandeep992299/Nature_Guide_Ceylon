@@ -1,0 +1,22 @@
+{
+"theme_color":"#3cfb62",
+"background_color":"#ffffff",
+"icons":[{"purpose":"maskable",
+"sizes":"512x512",
+"src":"icon512_maskable.png",
+"type":"image/png"
+},
+{
+"purpose":"any",
+"sizes":"512x512",
+"src":"icon512_rounded.png",
+"type":"image/png"}],
+"orientation":"any",
+"display":"standalone",
+"dir":"auto",
+"lang":"en-GB",
+"name":"Nature Guide Ceylon",
+"short_name":"NGC",
+"start_url":"index.html",
+"description":"This is a documentation website about Sri Lankan wildlife."
+}

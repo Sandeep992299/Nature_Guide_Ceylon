@@ -1,0 +1,117 @@
+.content-area .flex-container .flex-box p{
+    text-align: left;
+    background-color: aliceblue;
+    font-size: 20px;
+    font-weight: 300;
+    height: fit-content;
+}
+h2{
+    font-weight: bold;
+    font-style: italic;
+    background-color: chartreuse;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.banner-area{
+    object-fit: cover;
+    width: 100%;
+    height: fit-content;
+    margin-top: 10px;
+    opacity: 95%;
+    transition: .3s linear;
+    overflow: hidden;
+}   
+.banner-area:hover{
+    transform: scale(1.1);
+    opacity: 110%;
+    object-fit: cover;
+    width: 100%;
+    height: 80%;
+    margin-top: 10px;
+    overflow-y: hidden;
+    filter: grayscale(0) brightness(1.25);
+
+}
+.flex-box img{
+    max-height:40% ;
+    object-fit: cover;
+}
+.table{
+    border: 2px solid black;
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+.table tr:nth-child(odd){
+    background-color: rgb(182, 223, 232);
+}
+.flex-box  .map{
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    margin-top: 80px;
+}
+.image_grid{
+    --gap: 25px;
+    --num-cols: 3;
+    --row-height: 300px
+
+    box-sizing: border-box;
+    padding: var(--gap);
+
+    display: grid;
+    grid-template-columns: repeat(var(--num-cols), 1fr);
+    grid-auto-rows: var(--row-height);
+    gap: var(--gap);
+    margin-bottom:40px ;
+
+}
+.image_grid img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.image_grid:hover .photo{
+    filter: grayscale(1);
+
+}
+.image_grid .photo:hover{
+    filter: grayscale(0) brightness(1.25);
+}
+.image_grid:has(.one:hover){
+    grid-template-columns: 0.6fr 0.3fr 0.3fr ;   
+}
+.image_grid:has(.two:hover){
+    grid-template-columns: 0.3fr 0.6fr 0.3fr ;   
+}
+.image_grid:has(.three:hover){
+    grid-template-columns: 0.3fr 0.3fr 0.6fr ;   
+}
+.flex-box a{
+    text-align: center;
+    font-weight: bold;
+    font-size: large;
+    justify-content: center;
+    background-color: rgb(230, 210, 158);
+    margin: 20px;
+    border-radius: 50px;
+    padding: 10px;
+    text-decoration: none;
+}
+.flex-box a:hover{
+    text-align: center;
+    font-weight: bold;
+    font-size: large;
+    justify-content: center;
+    color: rgb(250, 250, 250);
+    background-color: rgb(11, 236, 101);
+    margin: 50px;
+    border-radius: 50px;
+    padding: 20px;
+    text-decoration: none;
+}

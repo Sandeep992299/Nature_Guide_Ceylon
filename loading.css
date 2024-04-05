@@ -1,0 +1,80 @@
+*{
+    height: fit-content;
+}
+body{
+    background-color: rgb(255, 255, 255);
+    max-height: fit-content;
+   
+}
+a{
+    text-align: center;
+    text-decoration: none;
+    font-size: 15px;
+    padding:10px;
+    color: #000;
+    background-color: rgb(199, 154, 56);
+    display: block;
+    font-weight: bold;
+    overflow: hidden;
+    font-family:  "Montserrat", sans-serif;
+    text-decoration: none;
+    border-radius: 50px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    
+    
+    text-wrap: wrap;
+    object-fit: cover;
+}
+section{
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    transform-style: preserve-3d;
+    perspective: 500px;
+}
+
+.banner{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+}
+.banner .blocks{
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    animation: anime 2s ease-in-out forwards;
+}
+img{
+    width: 100%;
+    height: 120%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    cursor: pointer;
+    
+}
+
+
+@media(max-width:991px){
+    .img{
+      width: 100%;
+     flex-direction: column;
+     margin-top: 30px;
+    }
+}
+@keyframes anime{
+    0%{
+        transform: translateZ(2000px);
+        
+    }
+    100%{
+        transform: translateZ(0px);
+        background-color: white;
+    }
+}
