@@ -57,6 +57,7 @@ body{
     top: 40%;
     transform: translate(-50%);
     font-size: 20px;
+    color: black;
 }
 .wrapper .remember-forgot{
     display: flex;
